@@ -121,7 +121,6 @@ public class StackLinkedList
                     System.out.println("Invalid Input");
                     break;
             }
-
         }while(choice != 6);       
 
     }
