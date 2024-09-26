@@ -1,30 +1,27 @@
 import java.util.Scanner;
-public class Queue 
+
+public class StackLinkedList
 {
     Node head;
-    void enqueue(int newValue)
+    void push(int newValue)
     {
         Node n = new Node(newValue);
         if(head == null)
         {
             head=n;
-            System.out.println("Data pushed into queue");
+            System.out.println("Data pushed into stack");
         }
         else
         {
-            Node current = head;
-            while(current.next!=null) 
-            {
-                current=current.next;
-            }  
-            current.next=n;        
+            n.next=head;
+            head=n;            
         }
     }
-    void dequeue()
+    void pop()
     {
         if(head == null)
         {
-            System.out.println("Queue is empty");
+            System.out.println("Stack is empty");
         }
         else
         {
@@ -36,7 +33,7 @@ public class Queue
     {
         if(head == null)
         {
-            System.out.println("Queue is empty");
+            System.out.println("Stack is empty");
         }
         else
         {
@@ -49,28 +46,27 @@ public class Queue
         Node current = head;
         if(head == null)
         {
-            System.out.println("Queue is empty");
+            System.out.println("Stack is empty");
         }
         else
         {
-            System.out.println("Queue data :");
+            System.out.println("Stack data :");
             while(current != null)
             {
                 System.out.println(current.data+" -> "+current.next);
                 current=current.next;
             }
-        }
-        
+        }        
     }
     void isEmpty()
     {
         if(head == null)
         {
-            System.out.println("Yes, Queue is empty");
+            System.out.println("Yes, Stack is empty");
         }
         else
         {
-            System.out.println("No, Queue contains some data");
+            System.out.println("No, Stack contains some data");
         }
     }
     public class Node 
@@ -83,16 +79,16 @@ public class Queue
             this.data = data;
         }
     }
-     public static void main(String[] args) 
-     {
+    public static void main(String[] args) 
+    {
         Scanner input = new Scanner(System.in);
         int choice = 0;
-        Queue queue = new Queue();
+        StackLinkedList sl = new StackLinkedList();
         do
         {
-            System.out.println("\nWelcome to Queue Implementation");
-            System.out.println("1. Enqueue");
-            System.out.println("2. Dequeue");
+            System.out.println("\nWelcome to Stack Implementation");
+            System.out.println("1. Push");
+            System.out.println("2. Pop");
             System.out.println("3. Peek");
             System.out.println("4. Display");
             System.out.println("5. Is Empty");
@@ -102,21 +98,21 @@ public class Queue
             switch(choice)
             {
                 case 1:
-                    System.out.print("Enter the data to be pushed into the queue : ");
+                    System.out.print("Enter the data to be pushed into the stack : ");
                     int newValue = input.nextInt();
-                    queue.enqueue(newValue);
+                    sl.push(newValue);
                     break;
                 case 2:
-                    queue.dequeue();
+                    sl.pop();
                     break;
                 case 3:
-                    queue.peek();
+                    sl.peek();
                     break;
                 case 4:
-                    queue.display();
+                    sl.display();
                     break;
                 case 5:
-                    queue.isEmpty();
+                    sl.isEmpty();
                     break;
                 case 6:
                     System.out.println("Thank You");
@@ -125,6 +121,8 @@ public class Queue
                     System.out.println("Invalid Input");
                     break;
             }
-        }while(choice != 6);
+
+        }while(choice != 6);       
+
     }
 }
