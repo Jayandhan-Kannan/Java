@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class DiamondOutline
 {
     public static void printStar(int i)
@@ -44,7 +43,6 @@ public class DiamondOutline
             printSpace(spaceCount);
             printStar(i);
             spaceCount++;
-        }
-        
+        }        
     }    
 }
