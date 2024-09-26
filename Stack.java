@@ -1,5 +1,5 @@
 import java.util.*;
-public class stack 
+public class Stack 
 {
     int array[]=new int[10];
     static int position=0;
@@ -58,7 +58,7 @@ public class stack
         Scanner input=new Scanner(System.in);
         int choice=0;
         int pushData;
-        stack obj=new stack();
+        Stack obj=new Stack();
         do
         {
             System.out.println("\n--------------------------");
