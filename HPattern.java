@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class hPattern
+public class HPattern
 {
     public static void printStar(int n,int s1,int s2)
     {
