@@ -4,8 +4,7 @@ public class stack
     int array[]=new int[10];
     static int position=0;
     void push(int data)
-    {
-        
+    {        
         array[position]=data;
         System.out.println("Data successfully added to stack");
         System.out.print("Stack Data : ");
