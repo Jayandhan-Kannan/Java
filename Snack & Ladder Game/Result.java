@@ -8,7 +8,7 @@ public class Result
     }
     public boolean check()
     {
-        if("$".equals(board.getBoard()[0][0].trim()))
+        if("$".equals(board.getBoard()[0][0]))
         {
             return true;
         }
